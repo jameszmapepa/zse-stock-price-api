@@ -8,13 +8,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-@Table(name = "stock_price")
+@Table(name = "stock_prices")
 @EqualsAndHashCode(callSuper = true)
 public class StockPrice extends BaseEntity {
 
-    @NonNull
+
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "equity_id", referencedColumnName = "id")
     private Equity equity;

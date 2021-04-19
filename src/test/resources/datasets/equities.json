@@ -1,0 +1,40 @@
+{
+  "equities": [
+    {
+      "id": 1,
+      "name": "African Sun Limited",
+      "symbol": "ASUN",
+      "sector": "Consumer Discretionary",
+      "status": "ACTIVE",
+      "year_founded": "1968-01-01",
+      "year_listed": "1990-01-01"
+    },
+    {
+      "id": 2,
+      "name": "Border Timbers Limited",
+      "symbol": "BRDR",
+      "sector": "Materials",
+      "status": "SUSPENDED",
+      "year_founded": "1945-01-01",
+      "year_listed": "1959-01-01"
+    },
+    {
+      "id": 3,
+      "name": "CBZ Holdings Limited",
+      "symbol": "CBZ",
+      "sector": "Financials",
+      "status": "ACTIVE",
+      "year_founded": "1980-01-01",
+      "year_listed": "1998-01-01"
+    },
+    {
+      "id": 4,
+      "name": "Fidelity Life Assurance Limited",
+      "symbol": "FIDL",
+      "sector": "Financials",
+      "status": "ACTIVE",
+      "year_founded": "1977-01-01",
+      "year_listed": "2001-01-01"
+    }
+  ]
+}

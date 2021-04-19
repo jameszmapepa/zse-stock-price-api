@@ -1,0 +1,98 @@
+{
+  "stock_prices": [
+    {
+      "id": 1,
+      "equity_id": 1,
+      "date": "2020-11-20 12:00:00",
+      "opening_price": 24,
+      "closing_price": 24,
+      "traded_volume": 100
+    },
+    {
+      "id": 2,
+      "equity_id": 3,
+      "date": "2020-11-20 12:00:00",
+      "opening_price": 1.8415,
+      "closing_price": 1.665,
+      "traded_volume": 1200
+    },
+    {
+      "id": 3,
+      "equity_id": 4,
+      "date": "2020-11-22 12:00:00",
+      "opening_price": 1.2,
+      "closing_price": 1.2503,
+      "traded_volume": 15000
+    },
+    {
+      "id": 4,
+      "equity_id": 4,
+      "date": "2020-11-22 12:00:00",
+      "opening_price": 0.125,
+      "closing_price": 0.125,
+      "traded_volume": 0
+    },
+    {
+      "id": 5,
+      "equity_id": 2,
+      "date": "2020-11-21 12:00:00",
+      "opening_price": 60.1,
+      "closing_price": 60.1,
+      "traded_volume": 100
+    },
+    {
+      "id": 6,
+      "equity_id": 2,
+      "date": "2020-11-20 12:00:00",
+      "opening_price": 8.8897,
+      "closing_price": 8.9731,
+      "traded_volume": 5400
+    },
+    {
+      "id": 7,
+      "equity_id": 3,
+      "date": "2021-01-15 12:00:00",
+      "opening_price": 13.1983,
+      "closing_price": 13.2024,
+      "traded_volume": 65600
+    }
+  ],
+  "equities": [
+    {
+      "id": 1,
+      "name": "African Sun Limited",
+      "symbol": "ASUN",
+      "sector": "Consumer Discretionary",
+      "status": "ACTIVE",
+      "year_founded": "1968-01-01",
+      "year_listed": "1990-01-01"
+    },
+    {
+      "id": 2,
+      "name": "Border Timbers Limited",
+      "symbol": "BRDR",
+      "sector": "Materials",
+      "status": "SUSPENDED",
+      "year_founded": "1945-01-01",
+      "year_listed": "1959-01-01"
+    },
+    {
+      "id": 3,
+      "name": "CBZ Holdings Limited",
+      "symbol": "CBZ",
+      "sector": "Financials",
+      "status": "ACTIVE",
+      "year_founded": "1980-01-01",
+      "year_listed": "1998-01-01"
+    },
+    {
+      "id": 4,
+      "name": "Fidelity Life Assurance Limited",
+      "symbol": "FIDL",
+      "sector": "Financials",
+      "status": "ACTIVE",
+      "year_founded": "1977-01-01",
+      "year_listed": "2001-01-01"
+    }
+  ]
+}

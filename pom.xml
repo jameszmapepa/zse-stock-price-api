@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from equity -->
     </parent>
     <groupId>com.jameszmapepa</groupId>
     <artifactId>zse-stock-price-api</artifactId>
@@ -139,6 +139,12 @@
             <artifactId>rider-junit5</artifactId>
             <version>${database-rider.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.database-rider</groupId>
+            <artifactId>rider-spring</artifactId>
+            <version>${database-rider.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.github.springtestdbunit</groupId>
             <artifactId>spring-test-dbunit</artifactId>
