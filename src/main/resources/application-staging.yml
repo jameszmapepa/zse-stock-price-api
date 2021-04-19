@@ -11,9 +11,9 @@ spring:
         hikari:
             maximum-pool-size: 5
             minimum-idle: 7
-        password: P@ssw0rd
-        url: jdbc:postgresql://localhost:5432/zse_stock_price?autoReconnect=true&createDatabaseIfNotExist=true&useSSL=false&TimeZone=CAT
-        username: postgres
+        password: 8eb55359484e720ed7be99a707e20589e10b5e3cb619a5ce1744d0520f005203
+        url: jdbc:postgresql://ec2-54-155-35-88.eu-west-1.compute.amazonaws.com:5432/d70nql85qki6b?autoReconnect=true&createDatabaseIfNotExist=true&sslmode=require&TimeZone=CAT
+        username: klurdllrfiechd
     jpa:
         hibernate:
             ddl-auto: update
