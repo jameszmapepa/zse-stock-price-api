@@ -9,11 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 @Slf4j
-class LoggingInterceptor implements Interceptor {
+final class LoggingInterceptor implements Interceptor {
 
     long requestTime;
     long responseTime;
-
 
     @NotNull
     @Override
