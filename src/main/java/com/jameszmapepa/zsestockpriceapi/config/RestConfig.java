@@ -22,7 +22,6 @@ public class RestConfig {
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
-                // .authenticator(getAuthenticator())
                 .build();
     }
 
