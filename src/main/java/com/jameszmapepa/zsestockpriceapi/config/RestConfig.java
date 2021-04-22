@@ -15,15 +15,12 @@ public class RestConfig {
     @Bean
     public OkHttpClient okHttpClient() {
         return new OkHttpClient.Builder()
-                .addInterceptor(new HeaderInterceptor())
-                .addInterceptor(new BasicAuthInterceptor())
-                .addInterceptor(new ErrorInterceptor())
-                .addInterceptor(new LoggingInterceptor())
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
+                // .addInterceptor(new BasicAuthInterceptor("user","pwd"))
+                .addInterceptor(new LoggingInterceptor())
                 .build();
     }
-
 
 }

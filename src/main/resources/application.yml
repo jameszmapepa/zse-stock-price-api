@@ -1,7 +1,0 @@
-server:
-    port: 8881
-    servlet:
-        context-path: /api
-spring:
-    profiles:
-        active: dev

@@ -1,4 +1,4 @@
-package com.jameszmapepa.zsestockpriceapi.common.api.cpg;
+package com.jameszmapepa.zsestockpriceapi.common.cpg;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,16 +9,14 @@ import lombok.*;
 import java.io.Serializable;
 
 
-@JsonPropertyOrder({
-        "transactionRequest"
-})
+@JsonPropertyOrder({"transactionRequest"})
 @Data
 @Builder
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CpgRequest implements Serializable {
+public class CPGRequest implements Serializable {
 
     @JsonProperty("transactionRequest")
     public TransactionRequest transactionRequest;

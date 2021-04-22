@@ -1,4 +1,4 @@
-package com.jameszmapepa.zsestockpriceapi.common.api.cpg;
+package com.jameszmapepa.zsestockpriceapi.common.cpg;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

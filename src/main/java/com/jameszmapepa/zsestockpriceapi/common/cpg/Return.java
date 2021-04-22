@@ -1,8 +1,9 @@
-package com.jameszmapepa.zsestockpriceapi.common.api.cpg;
+package com.jameszmapepa.zsestockpriceapi.common.cpg;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.*;
 
 import java.io.Serializable;
@@ -40,6 +41,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonRootName("return")
 public class Return implements Serializable {
 
     @JsonProperty("field1")
@@ -70,7 +72,7 @@ public class Return implements Serializable {
     public String field13;
     @JsonProperty("field14")
     public String field14;
-    @JsonProperty("field14")
+    @JsonProperty("field15")
     public String field15;
     @JsonProperty("field16")
     public String field16;

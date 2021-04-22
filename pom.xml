@@ -29,6 +29,9 @@
         <database-rider.version>1.23.0</database-rider.version>
         <spring-test-dbunit.version>1.3.0</spring-test-dbunit.version>
         <okhttp.version>4.8.1</okhttp.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <mapstruct.version>1.3.0.Final</mapstruct.version>
+
     </properties>
 
 
@@ -103,6 +106,21 @@
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>${okhttp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
 
 
