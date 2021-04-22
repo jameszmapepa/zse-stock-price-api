@@ -1,4 +1,4 @@
-package com.jameszmapepa.zsestockpriceapi.config;
+package com.jameszmapepa.zsestockpriceapi.config.rest;
 
 import lombok.Getter;
 import lombok.Setter;

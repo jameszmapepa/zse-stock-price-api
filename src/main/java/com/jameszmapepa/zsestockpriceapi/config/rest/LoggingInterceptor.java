@@ -1,4 +1,4 @@
-package com.jameszmapepa.zsestockpriceapi.config;
+package com.jameszmapepa.zsestockpriceapi.config.rest;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Interceptor;

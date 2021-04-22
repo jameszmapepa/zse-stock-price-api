@@ -1,4 +1,4 @@
-package com.jameszmapepa.zsestockpriceapi.config;
+package com.jameszmapepa.zsestockpriceapi.config.rest;
 
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Interceptor;

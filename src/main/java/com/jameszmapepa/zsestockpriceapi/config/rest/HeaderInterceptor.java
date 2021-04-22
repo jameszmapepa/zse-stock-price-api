@@ -1,5 +1,5 @@
 
-package com.jameszmapepa.zsestockpriceapi.config;
+package com.jameszmapepa.zsestockpriceapi.config.rest;
 
 import lombok.RequiredArgsConstructor;
 import okhttp3.Interceptor;
