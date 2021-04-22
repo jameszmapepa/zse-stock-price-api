@@ -1,28 +1,26 @@
 
 package com.jameszmapepa.zsestockpriceapi.config;
 
+import lombok.RequiredArgsConstructor;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 
+@RequiredArgsConstructor
 final class HeaderInterceptor implements Interceptor {
 
-    @Value("${cpg.rest-authorization-token}")
-    private String cpgAuthorizationKey;
+    private final HttpHeaderConfig headerConfig;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-
         request = request.newBuilder()
-                .addHeader("content-type", "application/json")
-                .addHeader("Authorization", cpgAuthorizationKey)
+                .addHeader("content-type", headerConfig.contentType)
+                .addHeader("Authorization", headerConfig.authToken)
                 .build();
 
         return chain.proceed(request);
     }
-
 }

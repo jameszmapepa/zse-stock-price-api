@@ -26,8 +26,6 @@ public class CPGInvokerImpl implements CPGInvoker {
     private ObjectMapper objectMapper;
     @Value("${cpg.rest-url}")
     private String url;
-    @Value("${cpg.rest-authorization-token}")
-    private String cpgAuthorizationKey;
 
     @Override
     public CPGResponse process(CPGRequest cpgRequest) throws Exception {
@@ -41,8 +39,6 @@ public class CPGInvokerImpl implements CPGInvoker {
         Request request = new Request.Builder()
                 .url(url)
                 .method(requestMethod, requestBody)
-                .addHeader("content-type", "application/json")
-                .addHeader("authorization", cpgAuthorizationKey)
                 .build();
 
         try {
