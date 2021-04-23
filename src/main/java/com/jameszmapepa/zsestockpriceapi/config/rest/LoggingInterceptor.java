@@ -37,7 +37,7 @@ final class LoggingInterceptor implements Interceptor {
         log.info("URI         : {}", request.url());
         log.debug("Method      : {}", request.method());
         log.debug("Headers     : {}", request.headers().toMultimap());
-        log.info("Request body: {}", bodyToString(request));
+        log.info("Body        : {}", bodyToString(request));
         log.info("Request End");
     }
 
@@ -46,7 +46,7 @@ final class LoggingInterceptor implements Interceptor {
         log.info("Status code     : {}", response.code());
         log.info("Status message  : {}", response.message());
         log.info("Headers         : {}", response.headers().toMultimap());
-        log.info("Response body   : {}", bodyToString(response));
+        log.info("Body            : {}", bodyToString(response));
         log.info("Response end");
     }
 
@@ -60,7 +60,7 @@ final class LoggingInterceptor implements Interceptor {
 
             return buffer.clone().readUtf8();
         } catch (final IOException e) {
-            log.error("Could not display response Body: {} ", e);
+            log.error("Could not display response Body: ", e);
 
             return null;
         }
@@ -74,7 +74,7 @@ final class LoggingInterceptor implements Interceptor {
 
             return buffer.readUtf8();
         } catch (final IOException e) {
-            log.error("Could not display response Body: {} ", e);
+            log.error("Could not display response Body: ", e);
 
             return null;
         }
