@@ -10,11 +10,9 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "stock_prices")
+@Table(name = "stock_price")
 @EqualsAndHashCode(callSuper = true)
 public class StockPrice extends BaseEntity {
-
-
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "equity_id", referencedColumnName = "id")
     private Equity equity;
@@ -29,6 +27,4 @@ public class StockPrice extends BaseEntity {
     private BigDecimal closingPrice;
     @Column(name = "traded_volume")
     private long volumeTraded;
-
-
 }

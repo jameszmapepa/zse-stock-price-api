@@ -13,10 +13,9 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "partners")
+@Table(name = "partner")
 @EqualsAndHashCode(callSuper = true)
 public class Partner extends BaseEntity {
-
     @Column(name = "partner_id", nullable = false)
     private String partnerId;
     @Column(name = "partner_key", nullable = false)

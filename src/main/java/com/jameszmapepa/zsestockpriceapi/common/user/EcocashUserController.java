@@ -8,6 +8,8 @@ import com.jameszmapepa.zsestockpriceapi.common.cpg.TransactionRequest;
 import com.jameszmapepa.zsestockpriceapi.invoker.CPGInvoker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +24,14 @@ import java.time.LocalDateTime;
 public class EcocashUserController {
 
     private final CPGInvoker invoker;
+    @Value("${cpg.rest-url}")
+    private String url;
 
 
     @GetMapping("/details")
     public ApiResponse<CPGResponse> findByName() throws Exception {
         log.info("Pushing request to CPG");
-        final CPGResponse cpgResponse = invoker.process(buildCPGRequest());
+        final CPGResponse cpgResponse = invoker.process(buildCPGRequest(), HttpMethod.POST, url);
         log.info("Returned CPG Response: {}", cpgResponse);
         return new ApiResponse<>(HttpStatus.OK.value(), ApiConstants.SUCCESS_MESSAGE, cpgResponse);
     }

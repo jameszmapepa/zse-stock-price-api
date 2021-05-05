@@ -11,10 +11,9 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "equities")
+@Table(name = "equity")
 @EqualsAndHashCode(callSuper = true)
 public class Equity extends BaseEntity {
-
     @NonNull
     @Column(name = "name")
     private String name;

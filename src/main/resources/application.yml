@@ -1,0 +1,20 @@
+cpg:
+    rest-url: http://test.cassavapaymentgateway.com/tbridge-inbound-api/restapi/post-payment
+http:
+    client:
+        connectTimeout: 10
+        readTimeout: 10
+        writeTimeout: 10
+    header:
+        authToken: Basic Y2Fzc2F2YWVjb25ldDolJEFwcmlsMTQxNA==
+        contentType: application/json
+jwt:
+    jwtexpirationinms: 604800000
+    jwtsecret: JWTSuperSecretKey
+server:
+    port: 8881
+    servlet:
+        context-path: /api
+spring:
+    profiles:
+        active: dev

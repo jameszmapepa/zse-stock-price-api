@@ -13,6 +13,8 @@ public class RestConfig {
 
     private final HttpClientConfig httpClientConfig;
     private final HttpHeaderConfig httpHeaderConfig;
+    private final HeaderInterceptor headerInterceptor;
+    private final LoggingInterceptor loggingInterceptor;
 
     @Bean
     public OkHttpClient okHttpClient() {
@@ -21,8 +23,8 @@ public class RestConfig {
                 .connectTimeout(httpClientConfig.connectTimeout, TimeUnit.SECONDS)
                 .writeTimeout(httpClientConfig.writeTimeout, TimeUnit.SECONDS)
                 .readTimeout(httpClientConfig.readTimeout, TimeUnit.SECONDS)
-                .addInterceptor(new HeaderInterceptor(httpHeaderConfig))
-                .addInterceptor(new LoggingInterceptor())
+                .addInterceptor(headerInterceptor)
+                .addInterceptor(loggingInterceptor)
                 .build();
     }
 }

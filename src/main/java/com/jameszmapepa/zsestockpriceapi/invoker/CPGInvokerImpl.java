@@ -22,18 +22,27 @@ public class CPGInvokerImpl implements CPGInvoker {
     private final OkHttpClient okHttpClient;
     private final Gson gson;
     private final ObjectMapper objectMapper;
-    @Value("${cpg.rest-url}")
-    private String url;
+
     @Value("${http.header.contentType}")
     private String contentType;
 
     @Override
-    public CPGResponse process(CPGRequest cpgRequest) throws Exception {
-        final Request request = buildRequest(cpgRequest);
+    public CPGResponse process(CPGRequest cpgRequest, HttpMethod httpMethod, String url) throws Exception {
+
+        final Request request = buildRequest(cpgRequest, HttpMethod.POST, url);
 
         return execute(request);
     }
 
+    private Request buildRequest(CPGRequest cpgRequest, HttpMethod httpMethod, String url) {
+        final RequestBody requestBody = buildRequestBody(cpgRequest);
+        final String requestMethod = String.valueOf(httpMethod);
+
+        return new Request.Builder()
+                .url(url)
+                .method(requestMethod, requestBody)
+                .build();
+    }
 
     private RequestBody buildRequestBody(CPGRequest cpgRequest) {
         final String jsonRequest = gson.toJson(cpgRequest);
@@ -42,22 +51,12 @@ public class CPGInvokerImpl implements CPGInvoker {
         return RequestBody.create(jsonRequest, mediaType);
     }
 
-    private Request buildRequest(CPGRequest cpgRequest) {
-        final RequestBody requestBody = buildRequestBody(cpgRequest);
-        final String requestMethod = String.valueOf(HttpMethod.POST);
-
-        return new Request.Builder()
-                .url(url)
-                .method(requestMethod, requestBody)
-                .build();
-    }
-
     private CPGResponse execute(Request request) {
         try {
             Response response = okHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
-                final String responseData = Objects.requireNonNull(response.body()).string();
-                final CPGResponse cpgResponse = objectMapper.readValue(responseData, CPGResponse.class);
+                final String responseBody = Objects.requireNonNull(response.body()).string();
+                final CPGResponse cpgResponse = objectMapper.readValue(responseBody, CPGResponse.class);
                 if (cpgResponse != null) {
                     log.debug("CPG response: {}", cpgResponse);
                     return cpgResponse;
