@@ -29,7 +29,7 @@ public class CPGInvokerImpl implements CPGInvoker {
     @Override
     public CPGResponse process(CPGRequest cpgRequest, HttpMethod httpMethod, String url) throws Exception {
 
-        final Request request = buildRequest(cpgRequest, HttpMethod.POST, url);
+        final Request request = buildRequest(cpgRequest, httpMethod, url);
 
         return execute(request);
     }
@@ -67,7 +67,7 @@ public class CPGInvokerImpl implements CPGInvoker {
         } catch (Exception ex) {
             log.error("Error", ex);
         }
-        log.info("Returned null Response");
+        log.error("Returned null Response");
         return null;
     }
 }
